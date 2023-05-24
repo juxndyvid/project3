@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="{% url 'estudiantes:index' %}">regresar</a>
+    {{ estudiante_data.identificacion }}
+    <form action="{% url 'estudiantes:actualizar' estudiante_data.pk %}" method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>identificacion</td>
+                <td><input type="text" name="txt_identificacion" value="{{estudiante_data.identificacion}}" readonly disabled></td>
+            </tr>
+            <tr>
+                <td>nombres</td>
+                <td><input type="text" name="txt_nombre" value="{{estudiante_data.nombre}}"></td>
+            </tr>
+            <tr>
+                <td>apellido 1</td>
+                <td><input type="text" name="txt_apellido_1" value="{{estudiante_data.apellido_1}}"></td>
+            </tr>
+            <tr>
+                <td>apellido 2</td>
+                <td><input type="text" name="txt_apellido_2" value="{{estudiante_data.apellido_2}}"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="enviar"></td>
+                <a href="{% url 'estudiantes:eliminar' estudiante_data.pk %}">eliminar</a>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

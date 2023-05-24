@@ -1,0 +1,6 @@
+
+u408359404_lpb
+server 45.152.46.52
+db u408359404_lpb
+user u408359404_admin
+password +0rJ4D^:+

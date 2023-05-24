@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="{% url 'estudiantes:crear' %}">crear estudiante</a>
+    <a href="{% url 'estudiantes:cursos' %}">cursos</a>
+    <a href="{% url 'estudiantes:salir' %}">salir</a>
+    <table>
+        <tr>
+            <td>nombre</td>
+            <td>apellido 1</td>
+            <td>apellido 2</td>
+        </tr>
+        {% for estudiante in estudiantes_list %}
+            <tr>
+                <td>{{ estudiante.nombre }}</td>
+                <td>{{ estudiante.apellido_1 }}</td>
+                <td>{{ estudiante.apellido_2 }}</td>
+                <!-- <td><a href="detalle/{{estudiante.pk}}">ver mas</a></td> -->
+                <td><a href="{% url 'estudiantes:detalle' estudiante.pk %}">ver mas</a></td>
+            </tr>
+        {% endfor %}    
+    </table>
+
+</body>
+</html>

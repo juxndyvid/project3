@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lp3</title>
+</head>
+<body>
+    <a href="{% url 'estudiantes:index' %}">regresar</a>
+    <form action="{% url 'estudiantes:guardar' %}" method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>identificacion</td>
+                <td><input type="text" name="txt_identificacion"></td>
+            </tr>
+            <tr>
+                <td>nombres</td>
+                <td><input type="text" name="txt_nombre"></td>
+            </tr>
+            <tr>
+                <td>apellido 1</td>
+                <td><input type="text" name="txt_apellido_1"></td>
+            </tr>
+            <tr>
+                <td>apellido 2</td>
+                <td><input type="text" name="txt_apellido_2"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="enviar"></td>
+                
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
